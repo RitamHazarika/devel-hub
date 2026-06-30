@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writer's Block | Original Stories, Global Writers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#studio" aria-label="Writer's Block home">
+        <span class="brand-mark">WB</span>
+        <span>Writer's Block</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#studio">Write</a>
+        <a href="#network">Connect</a>
+        <a href="#library">Library</a>
+      </nav>
+      <a class="button compact" href="#publish">Publish</a>
+    </header>
+
+    <main>
+      <section class="intro-band" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">For independent writers</p>
+          <h1 id="page-title">Write, verify, publish, and find your people.</h1>
+          <p>
+            A story workspace for original fiction, essays, serials, and poems,
+            with live originality feedback, worldwide writer discovery, and
+            instant social sharing.
+          </p>
+          <div class="intro-actions">
+            <a class="button" href="#studio">Start writing</a>
+            <a class="button secondary" href="#network">Meet writers</a>
+          </div>
+        </div>
+        <div class="story-visual" aria-label="Illustration of story pages and writer profiles">
+          <div class="floating-page page-one">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="floating-page page-two">
+            <strong>92%</strong>
+            <small>Originality</small>
+          </div>
+          <div class="profile-chip chip-one">
+            <span class="avatar">AM</span>
+            <span>Poetry circle</span>
+          </div>
+          <div class="profile-chip chip-two">
+            <span class="avatar teal">JK</span>
+            <span>Fantasy draft swap</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="studio" class="workspace-grid" aria-label="Writing studio">
+        <article class="writer-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Writing studio</p>
+            <h2>Your latest story</h2>
+          </div>
+
+          <label class="field-label" for="storyTitle">Title</label>
+          <input id="storyTitle" class="text-input" value="The City That Remembered Rain" />
+
+          <label class="field-label" for="storyGenre">Genre</label>
+          <select id="storyGenre" class="text-input">
+            <option>Literary Fiction</option>
+            <option>Fantasy</option>
+            <option>Science Fiction</option>
+            <option>Romance</option>
+            <option>Mystery</option>
+            <option>Poetry</option>
+            <option>Memoir</option>
+          </select>
+
+          <label class="field-label" for="storyText">Story draft</label>
+          <textarea id="storyText" spellcheck="true">The first time Mira heard the rain speak, the whole city stopped pretending it was made of stone. Windows opened like cautious eyes. Balconies leaned closer. Somewhere below, a violinist changed keys and every note sounded washed clean.</textarea>
+
+          <div class="upload-row">
+            <label class="upload-button" for="storyFile">Upload story file</label>
+            <input id="storyFile" type="file" accept=".txt,.md,.doc,.docx,.pdf" />
+            <span id="fileName">TXT, Markdown, DOCX, or PDF</span>
+          </div>
+        </article>
+
+        <aside class="insight-panel" aria-label="Originality and publishing tools">
+          <div class="score-ring" aria-live="polite">
+            <svg viewBox="0 0 120 120" role="img" aria-label="Originality score">
+              <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+              <circle id="scoreCircle" class="ring-value" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <div>
+              <strong id="scoreValue">92%</strong>
+              <span>Originality</span>
+            </div>
+          </div>
+
+          <div class="status-list">
+            <div>
+              <span class="status-dot good"></span>
+              <p><strong id="phraseStatus">Fresh phrasing</strong><small>Live text pattern scan</small></p>
+            </div>
+            <div>
+              <span class="status-dot warn"></span>
+              <p><strong id="similarityStatus">2 similar phrases</strong><small>Needs citation or rewrite</small></p>
+            </div>
+            <div>
+              <span class="status-dot good"></span>
+              <p><strong id="readStatus">Ready for readers</strong><small>Clear title and genre</small></p>
+            </div>
+          </div>
+
+          <div id="publish" class="publish-box">
+            <h3>Share preview</h3>
+            <p id="sharePreview">The City That Remembered Rain - a Literary Fiction story on Writer's Block.</p>
+            <div class="share-grid">
+              <button class="social-button" data-network="Twitter">X</button>
+              <button class="social-button" data-network="Facebook">f</button>
+              <button class="social-button" data-network="LinkedIn">in</button>
+              <button class="social-button" data-network="Copy">Copy</button>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="network" class="network-section" aria-labelledby="network-title">
+        <div class="section-heading">
+          <p class="eyebrow">Worldwide network</p>
+          <h2 id="network-title">Find writers by genre, language, and collaboration style.</h2>
+        </div>
+        <div class="filters" aria-label="Writer filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="fiction">Fiction</button>
+          <button class="filter" data-filter="poetry">Poetry</button>
+          <button class="filter" data-filter="critique">Critique partners</button>
+        </div>
+        <div class="writer-grid" id="writerGrid"></div>
+      </section>
+
+      <section id="library" class="library-section" aria-labelledby="library-title">
+        <div class="section-heading">
+          <p class="eyebrow">Original library</p>
+          <h2 id="library-title">Recently shared stories</h2>
+        </div>
+        <div class="story-list">
+          <article>
+            <span>Flash Fiction</span>
+            <h3>Maps for Unnamed Streets</h3>
+            <p>A quiet speculative piece about memory, home, and impossible cartography.</p>
+          </article>
+          <article>
+            <span>Poetry</span>
+            <h3>Salt on the Windowsill</h3>
+            <p>A compact cycle of poems about grief, kitchens, and inherited recipes.</p>
+          </article>
+          <article>
+            <span>Mystery</span>
+            <h3>The Last Bookmark</h3>
+            <p>A bookstore owner finds coded notes inside every returned classic.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
